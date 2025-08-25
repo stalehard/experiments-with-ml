@@ -40,7 +40,7 @@ while alive:
         corners = cv2.goodFeaturesToTrack(frame_gray, **feature_params)
         if corners is not None:
             for x, y in numpy.float32(corners).reshape(-1, 2):
-                cv2.circle(result, (x, y), 10, (0, 255, 0), 1)
+                cv2.circle(result, (int(x), int(y)), 10, (0, 255, 0), 1)
 
     cv2.imshow(win_name, result)
 
